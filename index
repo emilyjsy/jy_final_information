@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정보 기말고사 시험대비 포털</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f8f7f4;          /* 정보_시험정리 스타일의 부드러운 배경색 */
+    --surface: #ffffff;
+    --border: #e0ddd8;
+    --text: #1a1816;
+    --text2: #5a5650;
+    --accent-blue: #2563eb; /* 이론 정리 포인트 컬러 */
+    --accent-green: #22c06b;/* 퀴즈방 포인트 컬러 */
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .portal-container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    background: #1a1816;
+    border-radius: 30px;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .title {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    color: var(--text2);
+    font-weight: 400;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+  }
+
+  .menu-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 35px 30px;
+    text-decoration: none;
+    color: inherit;
+    text-align: left;
+    box-shadow: var(--shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 카드 상단 포인트 테두리 선 */
+  .menu-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+  }
+
+  .card-theory::before { background: var(--accent-blue); }
+  .card-quiz::before { background: var(--accent-green); }
+
+  .menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-theory:hover { border-color: var(--accent-blue); }
+  .card-quiz:hover { border-color: var(--accent-green); }
+
+  .card-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+
+  .card-desc {
+    font-size: 15px;
+    color: var(--text2);
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 25px;
+  }
+
+  .card-arrow {
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s;
+  }
+
+  .card-theory .card-arrow { color: var(--accent-blue); }
+  .card-quiz .card-arrow { color: var(--accent-green); }
+
+  .menu-card:hover .card-arrow {
+    gap: 8px;
+  }
+
+  @media (max-width: 600px) {
+    .title { font-size: 28px; }
+    .menu-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="portal-container">
+  <div class="header">
+    <span class="badge">FINAL EXAM</span>
+    <h1 class="title">정보 기말고사<br>시험대비 교육 포털</h1>
+    <p class="subtitle">졸지 말고 공부 열심히 해라. 밥 먹을 때 틈틈히 읽고 풀도록.</p>
+  </div>
+
+  <div class="menu-grid">
+    <a href="summary.html" class="menu-card card-theory">
+      <div class="card-icon">📘</div>
+      <h2 class="card-title">핵심 이론 정리</h2>
+      <p class="card-desc">네트워크, 사물인터넷, 데이터 압축, 파이썬, AI, 보안 정리본.</p>
+      <div class="card-arrow">학습 시작하기 ➔</div>
+    </a>
+
+    <a href="quiz.html" class="menu-card card-quiz">
+      <div class="card-icon">✍️</div>
+      <h2 class="card-title">실전 시험 퀴즈</h2>
+      <p class="card-desc">OX 문제, 객관식, 단답형 유형문제</p>
+      <div class="card-arrow">문제 풀러 가기 ➔</div>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
