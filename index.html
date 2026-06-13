@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,6 +15,7 @@
     --accent-blue: #2563eb; /* 이론 정리 포인트 컬러 */
     --accent-green: #22c06b;/* 퀴즈방 포인트 컬러 */
     --accent-red: #e0533d;  /* 고난도 퀴즈 포인트 컬러 */
+    --accent-purple: #8b5cf6; /* 최종 정리 빈칸 채우기 포인트 컬러 */
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   }
 
@@ -110,6 +110,7 @@
   .card-theory::before { background: var(--accent-blue); }
   .card-quiz::before { background: var(--accent-green); }
   .card-advanced::before { background: var(--accent-red); }
+  .card-review::before { background: var(--accent-purple); }
 
   .menu-card:hover {
     transform: translateY(-8px);
@@ -119,6 +120,7 @@
   .card-theory:hover { border-color: var(--accent-blue); }
   .card-quiz:hover { border-color: var(--accent-green); }
   .card-advanced:hover { border-color: var(--accent-red); }
+  .card-review:hover { border-color: var(--accent-purple); }
 
   .card-icon {
     font-size: 32px;
@@ -166,10 +168,15 @@
   .card-theory .card-arrow { color: var(--accent-blue); }
   .card-quiz .card-arrow { color: var(--accent-green); }
   .card-advanced .card-arrow { color: var(--accent-red); }
+  .card-review .card-arrow { color: var(--accent-purple); }
 
   .menu-card:hover .card-arrow {
     gap: 8px;
   }
+
+  /* 라벨 색상별 배경 */
+  .card-label.label-hard { background: var(--accent-red); }
+  .card-label.label-review { background: var(--accent-purple); }
 
   @media (max-width: 600px) {
     .title { font-size: 28px; }
@@ -202,11 +209,19 @@
     </a>
 
     <a href="quiz_advanced.html" class="menu-card card-advanced">
-      <span class="card-label">HARD</span>
+      <span class="card-label label-hard">HARD</span>
       <div class="card-icon">🔥</div>
       <h2 class="card-title">고난도 객관식 퀴즈</h2>
       <p class="card-desc">단원별 30문항씩 총 170문제. 시험장 함정 선지와 헷갈리는 선지 판단법까지 완벽 대비.</p>
       <div class="card-arrow">실력 점검하기 ➔</div>
+    </a>
+
+    <a href="review_blanks.html" class="menu-card card-review">
+      <span class="card-label label-review">FINAL</span>
+      <div class="card-icon">📇</div>
+      <h2 class="card-title">단원별 최종 정리 빈칸 채우기</h2>
+      <p class="card-desc">시험 직전 1분 점검용. 단원별 핵심 키워드/짝꿍 비교/함정 포인트를 빈칸으로 빠르게 점검.</p>
+      <div class="card-arrow">최종 점검하기 ➔</div>
     </a>
   </div>
 </div>
