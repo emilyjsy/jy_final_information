@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,6 +15,7 @@
     --text2: #5a5650;
     --accent-blue: #2563eb; /* 이론 정리 포인트 컬러 */
     --accent-green: #22c06b;/* 퀴즈방 포인트 컬러 */
+    --accent-red: #e0533d;  /* 고난도 퀴즈 포인트 컬러 */
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   }
 
@@ -35,7 +37,7 @@
   }
 
   .portal-container {
-    max-width: 800px;
+    max-width: 1100px;
     width: 100%;
     text-align: center;
     padding: 40px 20px;
@@ -107,6 +109,7 @@
 
   .card-theory::before { background: var(--accent-blue); }
   .card-quiz::before { background: var(--accent-green); }
+  .card-advanced::before { background: var(--accent-red); }
 
   .menu-card:hover {
     transform: translateY(-8px);
@@ -115,10 +118,25 @@
 
   .card-theory:hover { border-color: var(--accent-blue); }
   .card-quiz:hover { border-color: var(--accent-green); }
+  .card-advanced:hover { border-color: var(--accent-red); }
 
   .card-icon {
     font-size: 32px;
     margin-bottom: 20px;
+  }
+
+  /* 고난도 카드 우측 상단 라벨 */
+  .card-label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-red);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
   }
 
   .card-title {
@@ -147,6 +165,7 @@
 
   .card-theory .card-arrow { color: var(--accent-blue); }
   .card-quiz .card-arrow { color: var(--accent-green); }
+  .card-advanced .card-arrow { color: var(--accent-red); }
 
   .menu-card:hover .card-arrow {
     gap: 8px;
@@ -180,6 +199,14 @@
       <h2 class="card-title">실전 시험 퀴즈</h2>
       <p class="card-desc">OX 문제, 객관식, 단답형 유형문제</p>
       <div class="card-arrow">문제 풀러 가기 ➔</div>
+    </a>
+
+    <a href="quiz_advanced.html" class="menu-card card-advanced">
+      <span class="card-label">HARD</span>
+      <div class="card-icon">🔥</div>
+      <h2 class="card-title">고난도 객관식 퀴즈</h2>
+      <p class="card-desc">단원별 30문항씩 총 170문제. 시험장 함정 선지와 헷갈리는 선지 판단법까지 완벽 대비.</p>
+      <div class="card-arrow">실력 점검하기 ➔</div>
     </a>
   </div>
 </div>
